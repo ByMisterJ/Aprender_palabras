@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.aprenderpalabras.ui.navigation.AppNavigation
 import com.example.aprenderpalabras.ui.theme.AprenderPalabrasTheme
 import com.example.aprenderpalabras.viewmodel.SettingsViewModel
+import com.example.aprenderpalabras.viewmodel.SettingsViewModelFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +19,8 @@ class MainActivity : ComponentActivity() {
         
         setContent {
             val settingsViewModel: SettingsViewModel = viewModel(
-                factory = androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-            ) { SettingsViewModel(applicationContext) }
+                factory = SettingsViewModelFactory(applicationContext)
+            )
             
             val isDarkMode by settingsViewModel.isDarkMode.collectAsState()
             
