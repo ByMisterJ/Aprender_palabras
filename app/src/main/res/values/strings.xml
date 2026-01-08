@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">Aprender palabras</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Palabra del Día</string>
+    <string name="nav_login">Iniciar Sesión</string>
+    <string name="nav_register">Registrarse</string>
+    <string name="nav_settings">Configuración</string>
+    
+    <!-- Home Screen -->
+    <string name="word_of_the_day">Palabra del Día</string>
+    <string name="new_word">Nueva Palabra</string>
+    <string name="practice_new_words">Practicar nuevas palabras</string>
+    <string name="back_to_word_of_day">Volver a la palabra del día</string>
+    
+    <!-- Login Screen -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="no_account">¿No tienes cuenta? Regístrate</string>
+    
+    <!-- Register Screen -->
+    <string name="register_title">Crear Cuenta</string>
+    <string name="name">Nombre</string>
+    <string name="register_button">Registrarse</string>
+    <string name="have_account">¿Ya tienes cuenta? Inicia sesión</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">Configuración</string>
+    <string name="appearance">Apariencia</string>
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="dark_mode_enabled">Activado</string>
+    <string name="dark_mode_disabled">Desactivado</string>
+    <string name="about">Acerca de</string>
+    <string name="app_version">Aprender Palabras v1.0</string>
+    <string name="app_description">Mejora tu vocabulario cada día con nuevas palabras y definiciones.</string>
+    
+    <!-- Common -->
+    <string name="menu">Menú</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="hide_password">Ocultar contraseña</string>
 </resources>

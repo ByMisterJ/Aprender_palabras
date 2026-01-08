@@ -1,20 +1,32 @@
 package com.example.aprenderpalabras
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.aprenderpalabras.ui.navigation.AppNavigation
+import com.example.aprenderpalabras.ui.theme.AprenderPalabrasTheme
+import com.example.aprenderpalabras.viewmodel.SettingsViewModel
+import com.example.aprenderpalabras.viewmodel.SettingsViewModelFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        
+        setContent {
+            val settingsViewModel: SettingsViewModel = viewModel(
+                factory = SettingsViewModelFactory(applicationContext)
+            )
+            
+            val isDarkMode by settingsViewModel.isDarkMode.collectAsState()
+            
+            AprenderPalabrasTheme(darkTheme = isDarkMode) {
+                AppNavigation(settingsViewModel = settingsViewModel)
+            }
         }
     }
 }
