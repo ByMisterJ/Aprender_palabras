@@ -64,7 +64,7 @@ fun WordOfTheDayScreen(
                     
                     Spacer(modifier = Modifier.height(24.dp))
                     
-                    Divider(
+                    HorizontalDivider(
                         modifier = Modifier.width(100.dp),
                         color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.3f),
                         thickness = 2.dp
